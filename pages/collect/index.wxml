@@ -1,0 +1,23 @@
+<!-- pages/collect/index.wxml -->
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItenChange">
+  <view class="collect_main">
+    <view class="collect_title">
+      <text class="collect_tips active">全部</text>
+      <text class="collect_tips ">正在热卖</text>
+      <text class="collect_tips ">即将上线</text>
+    </view>
+    <view class="collect_content">
+      <navigator class="goos_item" wx:for="{{collect}}" wx:key="goods_id" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+        <!-- 左侧 图片容器 -->
+        <view class="goods_img_wrap">
+          <image src="{{item.goods_small_logo?item.goods_small_logo:'https://ts1.cn.mm.bing.net/th/id/R-C.95648a2520cd9df8eaa99bd8dfa7d495?rik=pomuzrtnEHhDoQ&riu=http%3a%2f%2fwww.sucaijishi.com%2fuploadfile%2f2017%2f0510%2f20170510104938760.gif&ehk=vAgstSifAKbIlyvKkMb7qIksnpDG0bFrpBXmPwwDVJw%3d&risl=&pid=ImgRaw&r=0'}}" mode="widthFix" />
+        </view>
+        <!-- 右侧 商品容器 -->
+        <view class="goods_info_wrap">
+          <view class="goods_name">{{item.goods_name}}</view>
+          <view class="goods_price">￥{{item.goods_price}}</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</Tabs>
